@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio · Simulador del Funcionamiento de la Web</title>
+  <meta name="description" content="Simulador educativo del ciclo cliente-servidor: desde que escribes una URL hasta que la página se renderiza en tu pantalla.">
+
+  <!-- Bootstrap 5 (CSS del framework, no se modifica) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Estilos propios (no toca archivos del framework) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="sw-skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="sw-header">
+    <nav class="navbar navbar-expand-lg navbar-dark sw-navbar sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="sw-brand-mark" aria-hidden="true"></span>
+          Simulador Web
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">
+                <span class="badge rounded-pill sw-step-badge">1</span> Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solicitud.html">
+                <span class="badge rounded-pill sw-step-badge">2</span> Solicitud HTTP
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servidor.html">
+                <span class="badge rounded-pill sw-step-badge">3</span> Servidor
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="respuesta.html">
+                <span class="badge rounded-pill sw-step-badge">4</span> Respuesta
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ejemplo.html">
+                <span class="badge rounded-pill sw-step-badge">5</span> Ejemplo
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recursos.html">
+                <span class="badge rounded-pill sw-step-badge"><i class="bi bi-life-preserver" aria-hidden="true"></i></span> Recursos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="progress sw-progress" role="progressbar" aria-label="Progreso del recorrido: paso 1 de 6"
+         aria-valuenow="17" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 17%"></div>
+    </div>
+  </header>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="sw-hero" aria-labelledby="hero-h1">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <p class="sw-hero-eyebrow mb-2">Arquitectura web · Ciclo cliente-servidor</p>
+          <h1 id="hero-h1" class="display-5 mb-3">¿Qué pasa realmente entre que escribes una URL y ves la página?</h1>
+          <p class="lead">Este simulador recorre, paso a paso, el viaje completo de una petición web: desde tu
+            navegador hasta el servidor y de vuelta, con ejemplos, tablas y un caso práctico al final.</p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="solicitud.html" class="btn btn-sw-primary btn-lg px-4">
+              Comenzar el recorrido <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+            </a>
+            <a href="ejemplo.html" class="btn btn-sw-ghost btn-lg px-4">Ver ejemplo práctico</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <svg viewBox="0 0 480 220" role="img" aria-labelledby="sw-hero-svg-title" class="w-100">
+            <title id="sw-hero-svg-title">Ilustración de un paquete de datos viajando entre el navegador y el servidor</title>
+            <!-- Navegador -->
+            <g transform="translate(30,70)">
+              <rect width="90" height="66" rx="10" fill="#122A4D" stroke="#3A5581"/>
+              <rect x="8" y="10" width="74" height="10" rx="3" fill="#3A5581"/>
+              <circle cx="16" cy="15" r="2.2" fill="#0E9E96"/>
+              <rect x="8" y="28" width="74" height="28" rx="4" fill="#0B1F3A"/>
+              <text x="45" y="60" text-anchor="middle" fill="#C9D6EA" font-size="11" font-family="Inter, sans-serif">Navegador</text>
+            </g>
+            <!-- Servidor -->
+            <g transform="translate(360,58)">
+              <rect width="80" height="90" rx="8" fill="#122A4D" stroke="#3A5581"/>
+              <rect x="8" y="10" width="64" height="12" rx="2" fill="#3A5581"/>
+              <rect x="8" y="28" width="64" height="12" rx="2" fill="#3A5581"/>
+              <rect x="8" y="46" width="64" height="12" rx="2" fill="#3A5581"/>
+              <circle cx="14" cy="16" r="2" fill="#0E9E96"/>
+              <circle cx="14" cy="34" r="2" fill="#0E9E96"/>
+              <circle cx="14" cy="52" r="2" fill="#0E9E96"/>
+              <text x="40" y="80" text-anchor="middle" fill="#C9D6EA" font-size="11" font-family="Inter, sans-serif">Servidor</text>
+            </g>
+            <!-- Ruta del paquete -->
+            <path id="sw-path" class="sw-packet-path" d="M125,100 C220,40 260,180 355,100" />
+            <circle class="sw-packet-dot" r="7">
+              <animateMotion dur="4.5s" repeatCount="indefinite" keyPoints="0;1;1;0;0" keyTimes="0;0.45;0.5;0.95;1" calcMode="linear">
+                <mpath href="#sw-path"/>
+              </animateMotion>
+            </circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+
+    <!-- ===================== RECORRIDO EN 6 PASOS ===================== -->
+    <section class="sw-section" aria-labelledby="recorrido-h2">
+      <div class="container">
+        <p class="sw-eyebrow mb-1">Mapa del sitio</p>
+        <h2 id="recorrido-h2" class="mb-4">El recorrido en 6 pasos</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3">1</div>
+              <h3 class="h5">Ingresar la URL</h3>
+              <p class="small">El navegador traduce el dominio a una dirección IP mediante DNS.</p>
+              <a href="index.html" class="stretched-link small fw-semibold">Estás aquí</a>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3">2</div>
+              <h3 class="h5">Solicitud HTTP</h3>
+              <p class="small">El cliente envía una petición GET o POST indicando qué recurso necesita.</p>
+              <a href="solicitud.html" class="stretched-link small fw-semibold">Ver paso <i class="bi bi-arrow-right"></i></a>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3">3</div>
+              <h3 class="h5">Servidor Web</h3>
+              <p class="small">El servidor procesa la petición y prepara una respuesta con sus cabeceras.</p>
+              <a href="servidor.html" class="stretched-link small fw-semibold">Ver paso <i class="bi bi-arrow-right"></i></a>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3">4</div>
+              <h3 class="h5">Respuesta y renderizado</h3>
+              <p class="small">El navegador interpreta el HTML y construye el DOM en pantalla.</p>
+              <a href="respuesta.html" class="stretched-link small fw-semibold">Ver paso <i class="bi bi-arrow-right"></i></a>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3">5</div>
+              <h3 class="h5">Ejemplo práctico</h3>
+              <p class="small">Un caso completo que combina HTML, CSS y un formulario interactivo.</p>
+              <a href="ejemplo.html" class="stretched-link small fw-semibold">Ver paso <i class="bi bi-arrow-right"></i></a>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card sw-card p-3">
+              <div class="sw-card-step mb-3"><i class="bi bi-life-preserver"></i></div>
+              <h3 class="h5">Recursos y contacto</h3>
+              <p class="small">Checklist de accesibilidad aplicada, enlaces útiles y formulario de contacto.</p>
+              <a href="recursos.html" class="stretched-link small fw-semibold">Ver recursos <i class="bi bi-arrow-right"></i></a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PASO 1: CONTENIDO ORIGINAL ===================== -->
+    <section class="sw-section" aria-labelledby="paso1-h2">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <span class="badge sw-step-badge bg-secondary mb-2">Paso 1 de 6</span>
+            <h2 id="paso1-h2">El usuario ingresa una URL en el navegador</h2>
+            <p>Todo comienza cuando escribes una dirección web, como <code>https://www.ejemplo.com</code>, en la
+              barra de tu navegador. El navegador necesita traducir ese nombre de dominio humano en una dirección
+              IP numérica mediante el sistema <strong>DNS</strong> (Domain Name System).</p>
+            <div class="alert alert-sw-tip d-flex gap-2" role="note">
+              <i class="bi bi-lightbulb-fill fs-5" aria-hidden="true"></i>
+              <div><strong>Dato clave:</strong> el DNS funciona como una agenda telefónica de internet: convierte
+                nombres fáciles de recordar en direcciones IP que las máquinas pueden usar.</div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <figure class="sw-figure m-0">
+              <img src="img/inicio_url.png" class="img-fluid" width="600"
+                   alt="Diagrama que muestra al usuario escribiendo una URL en el navegador y la posterior consulta DNS hacia el servidor">
+              <figcaption>Esquema del proceso inicial: del navegador a la resolución DNS.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sw-section" aria-labelledby="paso1-tabla-h3">
+      <div class="container">
+        <h3 id="paso1-tabla-h3">Componentes de una URL</h3>
+        <div class="card sw-card p-0">
+          <div class="table-responsive">
+            <table class="table sw-table table-striped mb-0">
+              <caption>Desglose de una URL estándar</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Componente</th>
+                  <th scope="col">Ejemplo</th>
+                  <th scope="col">Función</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Protocolo</th>
+                  <td><code>https://</code></td>
+                  <td>Indica el esquema de comunicación segura para la transmisión de datos.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dominio</th>
+                  <td><code>www.ejemplo.com</code></td>
+                  <td>El nombre único del servidor al que queremos acceder en la red.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paginación anterior/siguiente -->
+    <nav class="container sw-section pt-0" aria-label="Paginación entre pasos">
+      <div class="d-flex justify-content-end sw-pager">
+        <a href="solicitud.html" class="btn btn-outline-primary">
+          Siguiente: Solicitud HTTP <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer class="sw-footer">
+    <div class="container py-4">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold text-white">Simulador del Funcionamiento de la Web</p>
+          <p class="mb-0 small">Proyecto educativo — Arquitectura Web, ciclo cliente-servidor.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <span class="badge badge-sw-tech me-1">HTML5</span>
+          <span class="badge badge-sw-tech me-1">CSS3</span>
+          <span class="badge badge-sw-tech me-1">Bootstrap 5</span>
+          <span class="badge badge-sw-tech">Accesible</span>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0 small text-center">&copy; 2026 · Proyecto Educativo de Arquitectura Web ·
+        <a href="recursos.html">Recursos y accesibilidad</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle (incluye Popper, requerido para navbar/tooltip/modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

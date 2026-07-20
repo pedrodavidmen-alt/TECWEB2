@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos y Contacto · Simulador del Funcionamiento de la Web</title>
+  <meta name="description" content="Checklist de accesibilidad aplicada, enlaces de referencia y formulario de contacto.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="sw-skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="sw-header">
+    <nav class="navbar navbar-expand-lg navbar-dark sw-navbar sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="sw-brand-mark" aria-hidden="true"></span>
+          Simulador Web
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="badge rounded-pill sw-step-badge">1</span> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="solicitud.html"><span class="badge rounded-pill sw-step-badge">2</span> Solicitud HTTP</a></li>
+            <li class="nav-item"><a class="nav-link" href="servidor.html"><span class="badge rounded-pill sw-step-badge">3</span> Servidor</a></li>
+            <li class="nav-item"><a class="nav-link" href="respuesta.html"><span class="badge rounded-pill sw-step-badge">4</span> Respuesta</a></li>
+            <li class="nav-item"><a class="nav-link" href="ejemplo.html"><span class="badge rounded-pill sw-step-badge">5</span> Ejemplo</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="recursos.html"><span class="badge rounded-pill sw-step-badge"><i class="bi bi-life-preserver" aria-hidden="true"></i></span> Recursos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="progress sw-progress" role="progressbar" aria-label="Progreso del recorrido: paso 6 de 6"
+         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Recursos y Contacto</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="sw-section pt-2" aria-labelledby="recursos-h2">
+      <div class="container">
+        <span class="badge sw-step-badge bg-secondary mb-2">Paso 6 de 6</span>
+        <h2 id="recursos-h2">Recursos y contacto</h2>
+        <p>Esta sección reúne la checklist de accesibilidad aplicada en el sitio, enlaces de referencia para
+          profundizar y un formulario de contacto.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CHECKLIST DE ACCESIBILIDAD (acordeón) ===================== -->
+    <section class="sw-section" aria-labelledby="checklist-h3">
+      <div class="container">
+        <h3 id="checklist-h3"><i class="bi bi-clipboard2-check me-2" aria-hidden="true"></i>Checklist de accesibilidad aplicada</h3>
+        <p class="mb-3">Puntos concretos de usabilidad y accesibilidad aplicados en el rediseño de este sitio:</p>
+
+        <div class="accordion" id="acordeonChecklist">
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-contraste">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-contraste" aria-expanded="true" aria-controls="c-contraste">
+                1. Contraste de color texto/fondo
+              </button>
+            </h4>
+            <div id="c-contraste" class="accordion-collapse collapse show" aria-labelledby="h-contraste" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Se reemplazó el azul por defecto por un tono más oscuro (#1C6DD0 / #0F3D82) y un texto casi negro (#1B2333) sobre fondo claro, para superar una relación de contraste de 4.5:1 en texto normal.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-tipografia">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-tipografia" aria-expanded="false" aria-controls="c-tipografia">
+                2. Tipografía legible y tamaño de texto
+              </button>
+            </h4>
+            <div id="c-tipografia" class="accordion-collapse collapse" aria-labelledby="h-tipografia" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Tamaño base de 1.05rem con interlineado de 1.7, y una jerarquía tipográfica clara entre H1, H2 y H3 mediante pesos y tamaños diferenciados.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-semantica">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-semantica" aria-expanded="false" aria-controls="c-semantica">
+                3. Etiquetas HTML5 semánticas
+              </button>
+            </h4>
+            <div id="c-semantica" class="accordion-collapse collapse" aria-labelledby="h-semantica" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Se conservan y refuerzan <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;footer&gt;</code> en todas las páginas, evitando <code>&lt;div&gt;</code> innecesarios.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-alt">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-alt" aria-expanded="false" aria-controls="c-alt">
+                4. Textos alternativos descriptivos
+              </button>
+            </h4>
+            <div id="c-alt" class="accordion-collapse collapse" aria-labelledby="h-alt" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Todas las imágenes mantienen un atributo <code>alt</code> descriptivo del contenido y su función dentro de la explicación, no solo del archivo.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-foco">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-foco" aria-expanded="false" aria-controls="c-foco">
+                5. Estados visibles de foco y hover
+              </button>
+            </h4>
+            <div id="c-foco" class="accordion-collapse collapse" aria-labelledby="h-foco" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Se añadió un contorno de foco reforzado (<code>outline</code> de 3px en color teal) visible con teclado en enlaces, botones y campos de formulario, además de los estados hover propios de Bootstrap.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-nav">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-nav" aria-expanded="false" aria-controls="c-nav">
+                6. Navegación clara y consistente
+              </button>
+            </h4>
+            <div id="c-nav" class="accordion-collapse collapse" aria-labelledby="h-nav" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Barra de navegación fija con <code>aria-current="page"</code>, migas de pan (breadcrumb), barra de progreso del recorrido y botones de "anterior/siguiente" en cada paso.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-skip">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-skip" aria-expanded="false" aria-controls="c-skip">
+                7. Enlace "Saltar al contenido"
+              </button>
+            </h4>
+            <div id="c-skip" class="accordion-collapse collapse" aria-labelledby="h-skip" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Cada página incluye un enlace inicial oculto visualmente que aparece al recibir foco de teclado, permitiendo saltar el menú de navegación repetitivo.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="h-forms">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-forms" aria-expanded="false" aria-controls="c-forms">
+                8. Formularios accesibles
+              </button>
+            </h4>
+            <div id="c-forms" class="accordion-collapse collapse" aria-labelledby="h-forms" data-bs-parent="#acordeonChecklist">
+              <div class="accordion-body">Etiquetas <code>&lt;label&gt;</code> asociadas a cada campo, mensajes de error con <code>invalid-feedback</code>, y el foco se mueve automáticamente al primer campo inválido tras un intento de envío.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ENLACES DE REFERENCIA ===================== -->
+    <section class="sw-section" aria-labelledby="enlaces-h3">
+      <div class="container">
+        <h3 id="enlaces-h3"><i class="bi bi-link-45deg me-2" aria-hidden="true"></i>Enlaces de referencia</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col">
+            <a class="card sw-card p-3 text-decoration-none" href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank" rel="noopener">
+              <span class="badge bg-secondary mb-2 align-self-start">MDN</span>
+              <h4 class="h6 mb-1">Documentación oficial de HTTP</h4>
+              <p class="small mb-0">Referencia completa de métodos, cabeceras y códigos de estado.</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="card sw-card p-3 text-decoration-none" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">
+              <span class="badge bg-secondary mb-2 align-self-start">W3C WAI</span>
+              <h4 class="h6 mb-1">Introducción a la accesibilidad web</h4>
+              <p class="small mb-0">Principios fundamentales de accesibilidad según el W3C.</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="card sw-card p-3 text-decoration-none" href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">
+              <span class="badge bg-secondary mb-2 align-self-start">WebAIM</span>
+              <h4 class="h6 mb-1">Verificador de contraste de color</h4>
+              <p class="small mb-0">Herramienta para comprobar relaciones de contraste AA/AAA.</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="card sw-card p-3 text-decoration-none" href="https://getbootstrap.com/docs/5.3/getting-started/accessibility/" target="_blank" rel="noopener">
+              <span class="badge bg-secondary mb-2 align-self-start">Bootstrap</span>
+              <h4 class="h6 mb-1">Guía de accesibilidad de Bootstrap 5</h4>
+              <p class="small mb-0">Recomendaciones oficiales del framework utilizado en este sitio.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="sw-section" aria-labelledby="contacto-h3">
+      <div class="container">
+        <h3 id="contacto-h3"><i class="bi bi-envelope-paper me-2" aria-hidden="true"></i>Contacto</h3>
+        <div class="row gy-4">
+          <div class="col-lg-7">
+            <div class="card sw-card">
+              <div class="card-body">
+                <div class="sw-form-success alert alert-success d-none" role="alert">
+                  <i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i>
+                  ¡Mensaje enviado! Te responderemos pronto (simulación sin envío real).
+                </div>
+                <form action="#" method="post" class="sw-validate row g-3" novalidate>
+                  <div class="col-md-6 form-floating">
+                    <input type="text" class="form-control" id="c-nombre" name="nombre" placeholder="Nombre completo" required>
+                    <label for="c-nombre">Nombre completo</label>
+                    <div class="invalid-feedback">Ingresa tu nombre completo.</div>
+                  </div>
+                  <div class="col-md-6 form-floating">
+                    <input type="email" class="form-control" id="c-email" name="email" placeholder="nombre@correo.com" required>
+                    <label for="c-email">Correo electrónico</label>
+                    <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
+                  </div>
+                  <div class="col-12 form-floating">
+                    <textarea class="form-control" id="c-mensaje" name="mensaje" placeholder="Mensaje" style="height: 120px" required></textarea>
+                    <label for="c-mensaje">Mensaje</label>
+                    <div class="invalid-feedback">Escribe tu mensaje o consulta.</div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-sw-primary">
+                      <i class="bi bi-send-fill me-1" aria-hidden="true"></i> Enviar mensaje
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="card sw-card p-3 h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="img/mi_foto.jpg" alt="Fotografía del autor del proyecto" class="rounded-circle" width="64" height="64" style="object-fit:cover;">
+                <div>
+                  <h4 class="h6 mb-0">Proyecto educativo</h4>
+                  <p class="small mb-0">Arquitectura Web · Ciclo cliente-servidor</p>
+                </div>
+              </div>
+              <ul class="list-unstyled small mb-0 sw-list-check">
+                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Framework: Bootstrap 5.3</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Páginas: 6 (mínimo requerido: 3)</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Enfoque: usabilidad + accesibilidad</li>
+                <li><i class="bi bi-check-circle-fill me-2"></i>Responsive: móvil, tablet y escritorio</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="container sw-section pt-0" aria-label="Paginación entre pasos">
+      <div class="d-flex justify-content-start sw-pager">
+        <a href="ejemplo.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior: Ejemplo Práctico
+        </a>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer class="sw-footer">
+    <div class="container py-4">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold text-white">Simulador del Funcionamiento de la Web</p>
+          <p class="mb-0 small">Proyecto educativo — Arquitectura Web, ciclo cliente-servidor.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <span class="badge badge-sw-tech me-1">HTML5</span>
+          <span class="badge badge-sw-tech me-1">CSS3</span>
+          <span class="badge badge-sw-tech me-1">Bootstrap 5</span>
+          <span class="badge badge-sw-tech">Accesible</span>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0 small text-center">&copy; 2026 · Proyecto Educativo de Arquitectura Web ·
+        <a href="recursos.html">Recursos y accesibilidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paso 5: Ejemplo Práctico · Simulador del Funcionamiento de la Web</title>
+  <meta name="description" content="Caso práctico que integra HTML5, CSS3 y un formulario interactivo con Bootstrap.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="sw-skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="sw-header">
+    <nav class="navbar navbar-expand-lg navbar-dark sw-navbar sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="sw-brand-mark" aria-hidden="true"></span>
+          Simulador Web
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="badge rounded-pill sw-step-badge">1</span> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="solicitud.html"><span class="badge rounded-pill sw-step-badge">2</span> Solicitud HTTP</a></li>
+            <li class="nav-item"><a class="nav-link" href="servidor.html"><span class="badge rounded-pill sw-step-badge">3</span> Servidor</a></li>
+            <li class="nav-item"><a class="nav-link" href="respuesta.html"><span class="badge rounded-pill sw-step-badge">4</span> Respuesta</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="ejemplo.html"><span class="badge rounded-pill sw-step-badge">5</span> Ejemplo</a></li>
+            <li class="nav-item"><a class="nav-link" href="recursos.html"><span class="badge rounded-pill sw-step-badge"><i class="bi bi-life-preserver" aria-hidden="true"></i></span> Recursos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="progress sw-progress" role="progressbar" aria-label="Progreso del recorrido: paso 5 de 6"
+         aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 83%"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ejemplo Práctico</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="sw-section pt-2" aria-labelledby="paso5-h2">
+      <div class="container">
+        <span class="badge sw-step-badge bg-secondary mb-2">Paso 5 de 6</span>
+        <h2 id="paso5-h2">El resultado final renderizado</h2>
+        <p>Esta página simula un entorno web real completo, combinando todos los componentes obligatorios
+          aprendidos durante las unidades 1 a 3.</p>
+      </div>
+    </section>
+
+    <section class="sw-section" aria-labelledby="pruebas-h2">
+      <div class="container">
+        <article>
+          <h2 id="pruebas-h2">Bienvenido a mi sección de pruebas</h2>
+          <p>Este bloque representa los elementos interpretados nativamente por el cliente una vez finalizado el
+            ciclo de comunicación web.</p>
+
+          <div class="row gy-4 align-items-center mb-4">
+            <div class="col-md-4">
+              <figure class="sw-figure m-0">
+                <img src="img/mi_foto.jpg" class="img-fluid rounded" width="300"
+                     alt="Imagen representativa de desarrollo web front-end">
+                <figcaption>Imagen demostrativa del proyecto.</figcaption>
+              </figure>
+            </div>
+            <div class="col-md-8">
+              <h3>Tecnologías del cliente utilizadas</h3>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-primary fs-6 py-2 px-3"><i class="bi bi-filetype-html5 me-1"></i> HTML5 — Estructura y semántica</span>
+                <span class="badge bg-info text-dark fs-6 py-2 px-3"><i class="bi bi-filetype-css me-1"></i> CSS3 — Estilos y diseño visual</span>
+                <span class="badge bg-warning text-dark fs-6 py-2 px-3"><i class="bi bi-filetype-js me-1"></i> JavaScript — Interactividad dinámica</span>
+              </div>
+            </div>
+          </div>
+
+          <h3>Tabla de datos de rendimiento</h3>
+          <div class="card sw-card p-0 mb-4">
+            <div class="table-responsive">
+              <table class="table sw-table table-striped mb-0">
+                <caption>Tiempos promedio de carga simulados</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Fase del ciclo</th>
+                    <th scope="col">Tiempo promedio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Resolución DNS</th>
+                    <td>20 ms</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Espera del servidor (TTFB)</th>
+                    <td>120 ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3>Formulario de feedback del estudiante</h3>
+          <div class="card sw-card">
+            <div class="card-body">
+              <div class="sw-form-success alert alert-success d-none" role="alert">
+                <i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i>
+                ¡Gracias! Tus respuestas se registraron correctamente (simulación sin envío real).
+              </div>
+              <form action="#" method="post" class="sw-validate row g-3" novalidate aria-describedby="form-legend">
+                <fieldset class="col-12">
+                  <legend id="form-legend" class="h6 mb-3">¿Entendiste el ciclo de una petición web?</legend>
+
+                  <div class="col-12 form-floating mb-3">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    <label for="nombre">Nombre del estudiante</label>
+                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                  </div>
+
+                  <div class="col-12 form-floating mb-3">
+                    <textarea class="form-control" id="comentarios" name="comentarios" placeholder="Comentarios"
+                              style="height: 110px" required></textarea>
+                    <label for="comentarios">Comentarios</label>
+                    <div class="invalid-feedback">Cuéntanos brevemente qué entendiste del proceso.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-sw-primary">
+                      <i class="bi bi-send-fill me-1" aria-hidden="true"></i> Enviar respuestas
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="container sw-section pt-0" aria-label="Paginación entre pasos">
+      <div class="d-flex justify-content-between sw-pager">
+        <a href="respuesta.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior: Respuesta y Renderizado
+        </a>
+        <a href="recursos.html" class="btn btn-outline-primary">
+          Siguiente: Recursos y Contacto <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer class="sw-footer">
+    <div class="container py-4">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold text-white">Simulador del Funcionamiento de la Web</p>
+          <p class="mb-0 small">Proyecto educativo — Arquitectura Web, ciclo cliente-servidor.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <span class="badge badge-sw-tech me-1">HTML5</span>
+          <span class="badge badge-sw-tech me-1">CSS3</span>
+          <span class="badge badge-sw-tech me-1">Bootstrap 5</span>
+          <span class="badge badge-sw-tech">Accesible</span>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0 small text-center">&copy; 2026 · Proyecto Educativo de Arquitectura Web ·
+        <a href="recursos.html">Recursos y accesibilidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

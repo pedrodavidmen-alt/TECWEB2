@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paso 2: Solicitud HTTP · Simulador del Funcionamiento de la Web</title>
+  <meta name="description" content="Cómo el navegador envía una petición HTTP al servidor: métodos GET, POST y otros.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="sw-skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="sw-header">
+    <nav class="navbar navbar-expand-lg navbar-dark sw-navbar sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="sw-brand-mark" aria-hidden="true"></span>
+          Simulador Web
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="badge rounded-pill sw-step-badge">1</span> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="solicitud.html"><span class="badge rounded-pill sw-step-badge">2</span> Solicitud HTTP</a></li>
+            <li class="nav-item"><a class="nav-link" href="servidor.html"><span class="badge rounded-pill sw-step-badge">3</span> Servidor</a></li>
+            <li class="nav-item"><a class="nav-link" href="respuesta.html"><span class="badge rounded-pill sw-step-badge">4</span> Respuesta</a></li>
+            <li class="nav-item"><a class="nav-link" href="ejemplo.html"><span class="badge rounded-pill sw-step-badge">5</span> Ejemplo</a></li>
+            <li class="nav-item"><a class="nav-link" href="recursos.html"><span class="badge rounded-pill sw-step-badge"><i class="bi bi-life-preserver" aria-hidden="true"></i></span> Recursos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="progress sw-progress" role="progressbar" aria-label="Progreso del recorrido: paso 2 de 6"
+         aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 33%"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Solicitud HTTP</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="sw-section pt-2" aria-labelledby="paso2-h2">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <span class="badge sw-step-badge bg-secondary mb-2">Paso 2 de 6</span>
+            <h2 id="paso2-h2">El navegador realiza una petición HTTP</h2>
+            <p>Una vez localizada la dirección IP, el navegador (cliente) abre una conexión y envía un paquete de
+              datos llamado <strong>Petición HTTP</strong>. Esta petición le comunica al servidor exactamente qué
+              recurso quiere obtener.</p>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalGlosario">
+              <i class="bi bi-info-circle me-1" aria-hidden="true"></i> ¿Qué es una conexión cliente-servidor?
+            </button>
+          </div>
+          <div class="col-lg-6">
+            <figure class="sw-figure m-0">
+              <img src="img/flujo_http.png" class="img-fluid" width="500"
+                   alt="Esquema del cliente enviando un mensaje de petición hacia el servidor">
+              <figcaption>Flujo de la petición: del cliente al servidor.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sw-section" aria-labelledby="metodos-h3">
+      <div class="container">
+        <h3 id="metodos-h3">Métodos HTTP principales</h3>
+        <div class="card sw-card p-0 mb-3">
+          <div class="table-responsive">
+            <table class="table sw-table table-striped mb-0">
+              <caption>Comparativa de métodos HTTP</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Método</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Cuándo se usa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="badge bg-success">GET</span></th>
+                  <td>Solicita datos de un recurso específico en el servidor.</td>
+                  <td>Al cargar una página web, una imagen o buscar información.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="badge bg-primary">POST</span></th>
+                  <td>Envía datos al servidor para crear o actualizar un recurso.</td>
+                  <td>Al enviar un formulario de registro o subir un archivo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="alert alert-sw-tip d-flex gap-2" role="note">
+          <i class="bi bi-lightbulb-fill fs-5" aria-hidden="true"></i>
+          <div><strong>Idempotencia:</strong> repetir una petición <span class="badge bg-success">GET</span> no
+            cambia el estado del servidor; repetir una <span class="badge bg-primary">POST</span> puede crear
+            registros duplicados.</div>
+        </div>
+
+        <!-- Acordeón: componente enriquecido adicional -->
+        <h3 class="mt-4">Otros métodos HTTP (para profundizar)</h3>
+        <div class="accordion" id="acordeonMetodos">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="heading-put">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse-put" aria-expanded="false" aria-controls="collapse-put">
+                <span class="badge bg-warning text-dark me-2">PUT</span> Actualiza un recurso completo
+              </button>
+            </h4>
+            <div id="collapse-put" class="accordion-collapse collapse" aria-labelledby="heading-put" data-bs-parent="#acordeonMetodos">
+              <div class="accordion-body">Reemplaza por completo el recurso indicado en la URL con los datos enviados.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="heading-delete">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse-delete" aria-expanded="false" aria-controls="collapse-delete">
+                <span class="badge bg-danger me-2">DELETE</span> Elimina un recurso
+              </button>
+            </h4>
+            <div id="collapse-delete" class="accordion-collapse collapse" aria-labelledby="heading-delete" data-bs-parent="#acordeonMetodos">
+              <div class="accordion-body">Solicita al servidor que elimine el recurso identificado por la URL.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="heading-patch">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse-patch" aria-expanded="false" aria-controls="collapse-patch">
+                <span class="badge bg-info text-dark me-2">PATCH</span> Actualiza parcialmente un recurso
+              </button>
+            </h4>
+            <div id="collapse-patch" class="accordion-collapse collapse" aria-labelledby="heading-patch" data-bs-parent="#acordeonMetodos">
+              <div class="accordion-body">Modifica solo algunos campos del recurso, sin reemplazarlo por completo.</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4">Para aprender más sobre cómo estructurar estas peticiones, puedes visitar la
+          <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank" rel="noopener">
+            documentación oficial de MDN sobre HTTP <i class="bi bi-box-arrow-up-right small" aria-hidden="true"></i>
+            <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Paginación anterior/siguiente -->
+    <nav class="container sw-section pt-0" aria-label="Paginación entre pasos">
+      <div class="d-flex justify-content-between sw-pager">
+        <a href="index.html" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior: Inicio
+        </a>
+        <a href="servidor.html" class="btn btn-outline-primary">
+          Siguiente: Servidor Web <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
+
+  </main>
+
+  <!-- Modal de glosario: componente enriquecido adicional -->
+  <div class="modal fade" id="modalGlosario" tabindex="-1" aria-labelledby="modalGlosarioLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modalGlosarioLabel">Cliente y servidor</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Cliente:</strong> el programa que inicia la solicitud, normalmente tu navegador.</p>
+          <p class="mb-0"><strong>Servidor:</strong> la computadora remota que almacena los recursos (páginas,
+            imágenes, datos) y responde a las peticiones del cliente.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sw-primary" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="sw-footer">
+    <div class="container py-4">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold text-white">Simulador del Funcionamiento de la Web</p>
+          <p class="mb-0 small">Proyecto educativo — Arquitectura Web, ciclo cliente-servidor.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <span class="badge badge-sw-tech me-1">HTML5</span>
+          <span class="badge badge-sw-tech me-1">CSS3</span>
+          <span class="badge badge-sw-tech me-1">Bootstrap 5</span>
+          <span class="badge badge-sw-tech">Accesible</span>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0 small text-center">&copy; 2026 · Proyecto Educativo de Arquitectura Web ·
+        <a href="recursos.html">Recursos y accesibilidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
